@@ -59,34 +59,34 @@
         </div>
       
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Họ tên</label>
+          <label className="block text-sm font-medium text-gray-700">Tên sản phẩm</label>
           <input type="text"className="mt-1 p-2 w-full border rounded-md"/>
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Số điện thoại</label>
-          <input type="text"  className="mt-1 p-2 w-full border rounded-md"/>
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Địa chỉ</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md"/>
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Giới tính</label>
-          <select  className="mt-1 p-2 w-full border rounded-md">
-            <option>Nam</option>
-            <option >Nữ</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Ngày sinh</label>
-          <input type="date"  className="mt-1 p-2 w-full border rounded-md"/>
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Quyền</label>
+          <label className="block text-sm font-medium text-gray-700">Danh mục</label>
           <select className="mt-1 p-2 w-full border rounded-md">
-            <option >User</option>
-            <option >Admin</option>
+            <option >Piano</option>
+            <option >Guitar</option>
+            <option >Trumpet</option>
+            <option >Drum</option>
+            <option >Violin</option>
           </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Số lượng</label>
+          <input type="number"  className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Giá</label>
+          <input type="number" className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Hình ảnh</label>
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Mô tả</label>
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"/>
         </div>
         <div className="flex justify-end">
           <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mr-48">Cập nhật</button>
