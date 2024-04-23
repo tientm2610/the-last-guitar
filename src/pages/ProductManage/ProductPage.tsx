@@ -46,7 +46,53 @@
         
         </table>
       </div>
-     
+      
+      
+      {/**Form cập nhật thông tin */}
+
+      <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-4">Thông tin sản phẩm</h2>
+      <form>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-600" >Mã sản phẩm</label>
+          <input type="text" className="mt-1 p-2 w-full border rounded-md bg-slate-500 text-zinc-50"  disabled/>
+        </div>
+      
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Họ tên</label>
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Số điện thoại</label>
+          <input type="text"  className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Địa chỉ</label>
+          <input type="text" className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Giới tính</label>
+          <select  className="mt-1 p-2 w-full border rounded-md">
+            <option>Nam</option>
+            <option >Nữ</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Ngày sinh</label>
+          <input type="date"  className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Quyền</label>
+          <select className="mt-1 p-2 w-full border rounded-md">
+            <option >User</option>
+            <option >Admin</option>
+          </select>
+        </div>
+        <div className="flex justify-end">
+          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mr-48">Cập nhật</button>
+        </div>
+      </form>
+    </div>
     </div>
   );
   }

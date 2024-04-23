@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import HelloWorldPage from './Hai/HelloWorldPage';
-import SearchParamsPage from './SearchParamsPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import UserPage from './pages/UserManage/UserPage';
@@ -11,6 +9,7 @@ import ProductPage from './pages/ProductManage/ProductPage';
 import LoginForm from './pages/login/LoginForm';
 import OrderPage from './pages/OrderManage/OrderPage';
 import CategoryPage from './pages/CategoryManage/CategoryPage';
+import SlideBar from './pages/Components/SlideBar';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

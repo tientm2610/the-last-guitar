@@ -2,7 +2,7 @@ import React from 'react';
 
 function FooterComponent() {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gray-800 text-white h-fit">
       <div className="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-center">
         <div className="p-5 w-48 ">
           <div className="text-xs uppercase text-gray-400 font-medium">Trang</div>

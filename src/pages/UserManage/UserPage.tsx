@@ -1,27 +1,27 @@
 import React from 'react';
+import { isBlock } from 'typescript';
 
 function UserPage() {
   return (
-    <div className="p-8 ml-30 mr-30">
+    <div className="p-8  ml-60 mr-60"  >
       <div className="flex items-center justify-center mb-2">
-            <span className="text-gray-500 text-2xl font-bold">Quản lý thông tin người dùng</span>
+            <span className="text-gray-500 text-2xl font-bold">Quản lý sản phẩm</span>
           </div>
       <div className="mb-4 flex justify-between items-center">
-      
         <div className="flex-1 mr-4">
           <input
             type="text"
-            placeholder="Tìm kiếm người dùng..."
-            className="w-1/3 px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Tìm kiếm sản phẩm..."
+            className=" w-1/3 px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Thêm</button>
-
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 mr-60">Thêm</button>
       </div>
-      <div className="overflow-x-auto">
+
+      <div className="overflow-x-auto w-10/12">
         <table className="w-full text-left">
           <thead className="bg-gray-800 text-white">
-            <tr>
+          <tr>
               <th className="p-4">Tài khoản</th>
               <th className="p-4">Tên</th>
               <th className="p-4">Số điện thoại</th>
@@ -32,8 +32,21 @@ function UserPage() {
             </tr>
           </thead>
 
-              {/* Hàng Thông tin người dùng */}
+              {/* Hàng Thông tin sản phẩm */}
           <tbody>
+          <tr className="border-b">
+              <td className="p-4">but2610</td>
+              <td className="p-4">Nguyễn Văn A</td>
+              <td className="p-4">0785174058</td>
+              <td className="p-4">Hoàng Văn Thụ</td>
+              <td className="p-4">Nam</td>
+              <td className="p-4">26-10-2003</td>
+              <td className="p-4">
+              <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
+                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+              </td>
+            </tr>
+
             <tr className="border-b">
               <td className="p-4">but2610</td>
               <td className="p-4">Nguyễn Văn A</td>
@@ -47,27 +60,60 @@ function UserPage() {
               </td>
             </tr>
           </tbody>
-          <tbody>
-            {/* Ví dụ về một hàng dữ liệu */}
-            <tr className="border-b">
-              <td className="p-4">but2610</td>
-              <td className="p-4">Nguyễn Văn A</td>
-              <td className="p-4">0785174058</td>
-              <td className="p-4">Hoàng Văn Thụ</td>
-              <td className="p-4">Nam</td>
-              <td className="p-4">26-10-2003</td>
-              <td className="p-4">
-              <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
-                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
-              </td>
-            </tr>
-            {/* Bạn có thể thêm nhiều hàng dữ liệu tương tự */}
-          </tbody>
+        
         </table>
       </div>
      
+      {/**Form cập nhật thông tin */}
+
+      <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-4">Thông tin người dùng</h2>
+      <form>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-600" >Tài khoản</label>
+          <input type="text" className="mt-1 p-2 w-full border rounded-md bg-slate-500 text-zinc-50"  disabled/>
+        </div>
+      
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Họ tên</label>
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Số điện thoại</label>
+          <input type="text"  className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Địa chỉ</label>
+          <input type="text" className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Giới tính</label>
+          <select  className="mt-1 p-2 w-full border rounded-md">
+            <option>Nam</option>
+            <option >Nữ</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Ngày sinh</label>
+          <input type="date"  className="mt-1 p-2 w-full border rounded-md"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Quyền</label>
+          <select className="mt-1 p-2 w-full border rounded-md">
+            <option >User</option>
+            <option >Admin</option>
+          </select>
+        </div>
+        <div className="flex justify-end">
+          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mr-48">Cập nhật</button>
+        </div>
+      </form>
     </div>
+    </div>
+
+    
   );
 }
 
 export default UserPage;
+
