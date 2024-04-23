@@ -4,16 +4,15 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HelloWorldPage from './Hai/HelloWorldPage';
 import SearchParamsPage from './SearchParamsPage';
-import FooterComponent from './pages/Components/FooterComponent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
-
+import UserPage from './pages/UserManage/UserPage';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    {/* <Layout> */}
+    <Layout>
     <BrowserRouter>
       <Routes>
 
@@ -23,8 +22,8 @@ root.render(
         />
         
         <Route
-          path='/footer'
-          Component={SearchParamsPage}
+          path='/user-manager'
+          Component={UserPage}
         />
         <Route
           path='/searchparams'
@@ -33,7 +32,7 @@ root.render(
 
       </Routes>
     </BrowserRouter>
-    {/* </Layout> */}
+    </Layout>
   </React.StrictMode>
 );
 
