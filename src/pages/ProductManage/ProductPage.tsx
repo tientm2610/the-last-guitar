@@ -1,6 +1,6 @@
 
 
-function ProductPage() {
+ function ProductPage() {
   return (
     <div className="p-8  ml-60"  >
       <div className="flex items-center justify-center mb-2">
