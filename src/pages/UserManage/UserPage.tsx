@@ -1,6 +1,6 @@
 
 
-function HeaderComponent() {
+function UserMPage() {
     return (
       <div>
        
@@ -8,5 +8,5 @@ function HeaderComponent() {
     );
   }
   
-  export default HeaderComponent;
+  export default UserMPage;
   

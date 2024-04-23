@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HelloWorldPage from './Hai/HelloWorldPage';
 import SearchParamsPage from './SearchParamsPage';
+import FooterComponent from './pages/Components/FooterComponent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
@@ -18,7 +19,11 @@ root.render(
           path='/'
           Component={HelloWorldPage}
         />
-
+        
+        <Route
+          path='/footer'
+          Component={FooterComponent}
+        />
         <Route
           path='/searchparams'
           Component={SearchParamsPage}
