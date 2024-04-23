@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
-=======
-import React from 'react';
->>>>>>> 223983b9008832944db75dffd28e622a150f50fa
 
 export default function HeaderComponent() {
     // States
     const [showLogoutPopup, setShowLogoutPopup] = useState(false);
     
-    //Event Handler:
+    // Event Handlers
     const handleLogoutClick = () => {
         setShowLogoutPopup(true);
     }
@@ -19,7 +15,7 @@ export default function HeaderComponent() {
         setShowLogoutPopup(false);
     }
 
-    //Design:
+    // Design
     return (
         <div className="bg-gray-800 text-white p-4 flex justify-between items-center">
             <div className="flex items-center">
@@ -41,12 +37,12 @@ export default function HeaderComponent() {
                 >Đăng Xuất</button>
             </div>
 
-            {/* Popup đăng xuất */}
+            {/* Logout Popup */}
             {showLogoutPopup && (
                 <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
                     <div className="bg-white p-8 rounded-lg">
-                        <p>Bạn có chắc chắn muốn đăng xuất không?</p>
-                        <div className="mt-4 flex justify-center">
+                        <p className="text-lg font-semibold mb-4">Bạn có chắc chắn muốn đăng xuất không?</p>
+                        <div className="flex justify-center">
                             <button 
                                 className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 mr-4"
                                 onClick={handleLogoutConfirm}
