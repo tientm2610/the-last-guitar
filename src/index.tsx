@@ -6,12 +6,14 @@ import HelloWorldPage from './Hai/HelloWorldPage';
 import SearchParamsPage from './SearchParamsPage';
 import FooterComponent from './pages/Components/FooterComponent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    {/* <Layout> */}
     <BrowserRouter>
       <Routes>
 
@@ -22,7 +24,7 @@ root.render(
         
         <Route
           path='/footer'
-          Component={FooterComponent}
+          Component={SearchParamsPage}
         />
         <Route
           path='/searchparams'
@@ -31,6 +33,7 @@ root.render(
 
       </Routes>
     </BrowserRouter>
+    {/* </Layout> */}
   </React.StrictMode>
 );
 
