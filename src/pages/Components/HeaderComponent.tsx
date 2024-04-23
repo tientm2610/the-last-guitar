@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import React from 'react';
+>>>>>>> 223983b9008832944db75dffd28e622a150f50fa
 
 export default function HeaderComponent() {
     // States
