@@ -2,13 +2,17 @@ import React from 'react';
 
 function UserPage() {
   return (
-    <div className="p-8">
+    <div className="p-8 ml-30 mr-30">
+      <div className="flex items-center justify-center mb-2">
+            <span className="text-gray-500 text-2xl font-bold">Quản lý thông tin người dùng</span>
+          </div>
       <div className="mb-4 flex justify-between items-center">
+      
         <div className="flex-1 mr-4">
           <input
             type="text"
             placeholder="Tìm kiếm người dùng..."
-            className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-1/3 px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Thêm</button>

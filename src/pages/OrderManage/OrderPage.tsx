@@ -18,7 +18,7 @@ function OrderPage() {
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-left">
-          <thead className="bg-gray-800 text-white">
+          <thead className="bg-gray-800 text-white justify-items-center" >
             <tr>
               <th className="p-4">Order Id</th>
               <th className="p-4">Order Name</th>

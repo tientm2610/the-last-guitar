@@ -9,6 +9,8 @@ import Layout from './Layout';
 import UserPage from './pages/UserManage/UserPage';
 import ProductPage from './pages/ProductManage/ProductPage';
 import LoginForm from './pages/login/LoginForm';
+import OrderPage from './pages/OrderManage/OrderPage';
+import CategoryPage from './pages/CategoryManage/CategoryPage';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -20,20 +22,24 @@ root.render(
 
         <Route
           path='/'
-          Component={LoginForm}
+          Component={ProductPage}
         />
         
         <Route
-          path='/user'
+          path='/users'
           Component={UserPage}
         />
         <Route
-          path='/product'
-          Component={ProductPage}
+          path='/login'
+          Component={LoginForm}
         />
         <Route
-          path='/searchparams'
-          Component={SearchParamsPage}
+          path='/orders'
+          Component={OrderPage}
+        />
+        <Route
+          path='/categories'
+          Component={CategoryPage}
         />
 
       </Routes>

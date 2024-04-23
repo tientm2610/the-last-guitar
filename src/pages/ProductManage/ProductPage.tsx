@@ -2,7 +2,7 @@
 
  function ProductPage() {
   return (
-    <div className="p-8  ml-60"  >
+    <div className="p-8  ml-60 mr-60"  >
       <div className="flex items-center justify-center mb-2">
             <span className="text-gray-500 text-2xl font-bold">Quản lý sản phẩm</span>
           </div>
@@ -39,7 +39,7 @@
               <td className="p-4">2000$</td>
               <td className="p-4">
               <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
-                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+              <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
               </td>
             </tr>
           </tbody>
