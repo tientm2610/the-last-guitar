@@ -7,6 +7,8 @@ import SearchParamsPage from './SearchParamsPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import UserPage from './pages/UserManage/UserPage';
+import ProductPage from './pages/ProductManage/ProductPage';
+import LoginForm from './pages/login/LoginForm';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -18,12 +20,16 @@ root.render(
 
         <Route
           path='/'
-          Component={HelloWorldPage}
+          Component={LoginForm}
         />
         
         <Route
-          path='/user-manager'
+          path='/user'
           Component={UserPage}
+        />
+        <Route
+          path='/product'
+          Component={ProductPage}
         />
         <Route
           path='/searchparams'

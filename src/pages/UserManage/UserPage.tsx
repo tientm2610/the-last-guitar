@@ -27,13 +27,31 @@ function UserPage() {
               <th className="p-4">Hành động</th>
             </tr>
           </thead>
+
+              {/* Hàng Thông tin người dùng */}
+          <tbody>
+            <tr className="border-b">
+              <td className="p-4">but2610</td>
+              <td className="p-4">Nguyễn Văn A</td>
+              <td className="p-4">0785174058</td>
+              <td className="p-4">Hoàng Văn Thụ</td>
+              <td className="p-4">Nam</td>
+              <td className="p-4">26-10-2003</td>
+              <td className="p-4">
+              <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
+                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+              </td>
+            </tr>
+          </tbody>
           <tbody>
             {/* Ví dụ về một hàng dữ liệu */}
             <tr className="border-b">
-              <td className="p-4">1</td>
+              <td className="p-4">but2610</td>
               <td className="p-4">Nguyễn Văn A</td>
-              <td className="p-4">nguyenvana@example.com</td>
-              <td className="p-4">Quản trị viên</td>
+              <td className="p-4">0785174058</td>
+              <td className="p-4">Hoàng Văn Thụ</td>
+              <td className="p-4">Nam</td>
+              <td className="p-4">26-10-2003</td>
               <td className="p-4">
               <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
                 <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>

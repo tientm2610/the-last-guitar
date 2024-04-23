@@ -8,13 +8,13 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col min-h-screen">
-    <HeaderComponent />
-    <main className="flex-grow">
-      {children}
-    </main>
-    <FooterComponent />
-  </div>
+     <div className="flex flex-col min-h-screen">
+      <HeaderComponent />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <FooterComponent />
+    </div>
   );
 };
 
