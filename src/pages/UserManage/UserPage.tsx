@@ -1,7 +1,20 @@
-import React from 'react';
-import { isBlock } from 'typescript';
+import React, { useEffect,useState } from 'react';
+import User from '../../entities/User';
 
 function UserPage() {
+
+  const[users, setUsers] = useState<User[]>([]);
+  
+  useEffect(()=>{
+    const fetchAllUsers = async ()=>{
+      const users = await User.getAllUser();
+      if(users){
+        setUsers(users);
+    }
+  };
+
+  fetchAllUsers();
+}, []);
   return (
     <div className="p-8  ml-60 mr-60"  >
       <div className="flex items-center justify-center mb-2">
@@ -26,39 +39,25 @@ function UserPage() {
               <th className="p-4">Tên</th>
               <th className="p-4">Số điện thoại</th>
               <th className="p-4">Địa chỉ</th>
-              <th className="p-4">Giới tính</th>
-              <th className="p-4">Ngày sinh</th>
               <th className="p-4">Hành động</th>
             </tr>
           </thead>
 
-              {/* Hàng Thông tin sản phẩm */}
+              {/* Hàng danh sách user*/}
           <tbody>
-          <tr className="border-b">
-              <td className="p-4">but2610</td>
-              <td className="p-4">Nguyễn Văn A</td>
-              <td className="p-4">0785174058</td>
-              <td className="p-4">Hoàng Văn Thụ</td>
-              <td className="p-4">Nam</td>
-              <td className="p-4">26-10-2003</td>
-              <td className="p-4">
-              <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
-                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
-              </td>
-            </tr>
-
-            <tr className="border-b">
-              <td className="p-4">but2610</td>
-              <td className="p-4">Nguyễn Văn A</td>
-              <td className="p-4">0785174058</td>
-              <td className="p-4">Hoàng Văn Thụ</td>
-              <td className="p-4">Nam</td>
-              <td className="p-4">26-10-2003</td>
-              <td className="p-4">
-              <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
-                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
-              </td>
-            </tr>
+            {users.map((user) => (
+               <tr className="border-b">
+               <td className="p-4">{user.username}</td>
+               <td className="p-4">{user.fullname}</td>
+               <td className="p-4">{user.phone}</td>
+               <td className="p-4">{user.address}</td>
+               <td className="p-4">
+               <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
+                 <button className="ml-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+               </td>
+             </tr>
+            ))}
+        
           </tbody>
         
         </table>
