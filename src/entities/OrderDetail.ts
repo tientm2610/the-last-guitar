@@ -6,9 +6,33 @@
         "productId": "P01"
     }
  */
-export default interface OrderDetail{
-    price: number;
-    unit: number;
-    orderId: string;
-    productId: string
+import apiRequest from "../Api/ApiRequest";
+
+export default class OrderDetail{
+   public price: number;
+   public unit: number;
+   public orderId: string;
+   public productId: string
+
+   constructor(unit: number, price: number, orderId: string, productId: string) {
+       this.unit = unit;
+       this.price = price;
+       this.orderId = orderId;
+       this.productId = productId;
+   }
+
+   toJson(){
+    return {
+        "price": this.price,
+        "unit": this.unit,
+        "orderId": this.orderId,
+        "productId": this.productId
+    }
+   }
+
+   //getAllOrderDetail
+   public static async getAllOrderDetail(): Promise<OrderDetail[] | null> {
+       const res = await apiRequest("GET", "/orderdetails");
+       return res;
+   }
 }

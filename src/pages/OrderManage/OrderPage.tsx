@@ -20,19 +20,31 @@ function OrderPage() {
         <table className="w-full text-left">
           <thead className="bg-gray-800 text-white justify-items-center" >
             <tr>
-              <th className="p-4">Order Id</th>
-              <th className="p-4">Order Name</th>
-              <th className="p-4">Action</th>
+              <th className="p-4">Mã đơn hàng</th>
+              <th className="p-4">Địa chỉ</th>
+              <th className="p-4">Ngày đặt hàng</th>
+              <th className="p-4">Số điện thoại</th>
+              <th className="p-4">Trạng thái</th>
+              <th className="p-4">Tổng thành tiền</th>
+              <th className="p-4">Hành động </th>
             </tr>
           </thead>
           <tbody>
             {/* Ví dụ về một hàng dữ liệu */}
             <tr className="border-b">
-              <td className="p-4">P01</td>
-              <td className="p-4">Piano</td>
+              <td className="p-4">2108110131</td>
+              <td className="p-4">371 Nguyễn Kiệm</td>
+              <td className="p-4">26-10-2023</td>
+              <td className="p-4">0123456789</td>
+              <select className="mt-1 p-2 w-full border rounded-md">
+                  <option>Đang xử lý</option>
+                  <option>Giao hàng thành công</option>
+                  <option>Giao hàng thất bại</option>
+                </select>
+              <td className="p-4">5000$</td>
               <td className="p-4">
-                <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Update</button>
-                <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Delete</button>
+                <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
+                <button className="ml-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
               </td>
             </tr>
             {/* Bạn có thể thêm nhiều hàng dữ liệu tương tự */}

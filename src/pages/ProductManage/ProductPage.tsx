@@ -30,7 +30,7 @@ function ProductPage() {
             className="w-1/3 px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 mr-60">
+        <button className=" px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 mr-60">
           Thêm
         </button>
       </div>
