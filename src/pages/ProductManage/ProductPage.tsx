@@ -1,36 +1,10 @@
 import { useEffect, useState } from "react";
 import Product from "../../entities/Product";
-import Controller from "../../controllers/Controller";
-import LoadAllProductsController, { LoadAllProductsParam } from "../../controllers/productmanagepage/LoadAllProductsController";
 
 
  function ProductPage() {
   // States:
-  const [ products, setProducts ] = useState<Product[]>([]);
-  const [ product, setProduct ] = useState<Product | undefined>(undefined);
-
-  // Controllers:
-  const loadAllProductsController: Controller<LoadAllProductsParam> = new LoadAllProductsController();
-
-  // Init:
-  function init() {
-    loadAllProductsController.execute(
-      {
-        onSuccess: setProducts,
-        onError(reason) {
-            console.error(reason);
-            alert(`Đã có lỗi xảy ra trong quá trình thực thi!`);
-        },
-      }
-    );
-  }
-
-  useEffect(init, []);
-
-  // Event handlers:
-  async function onEditProductButtonClick(product: Product): Promise<void> {
-    setProduct(product)
-  }
+ 
 
   // Design:
   return (
@@ -64,7 +38,7 @@ import LoadAllProductsController, { LoadAllProductsParam } from "../../controlle
 
               {/* Hàng Thông tin sản phẩm */}
           <tbody>
-            {/* <tr className="border-b">
+            <tr className="border-b">
               <td className="p-4">P01</td>
               <td className="p-4"> <img src="/logo.png" alt="productImage" className="size-20"/></td>
               <td className="p-4">Đàn Piano</td>
@@ -73,23 +47,8 @@ import LoadAllProductsController, { LoadAllProductsParam } from "../../controlle
               <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Sửa</button>
               <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
               </td>
-            </tr> */}
-            {
-              products.map(
-                product => (
-                  <tr className="border-b">
-                    <td className="p-4">{ product.productId }</td>
-                    <td className="p-4"> <img src={ `http://localhost:3333/api/products/${product.productId}/image` } alt="productImage" className="size-20"/></td>
-                    <td className="p-4">{ product.productName }</td>
-                    <td className="p-4">{ product.price }$</td>
-                    <td className="p-4">
-                    <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600" onClick={ () => onEditProductButtonClick(product) }>Sửa</button>
-                    <button className="ml-2 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
-                    </td>
-                  </tr>
-                )
-              )
-            }
+            </tr>
+           
           </tbody>
         
         </table>
@@ -103,12 +62,12 @@ import LoadAllProductsController, { LoadAllProductsParam } from "../../controlle
       <form>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600" >Mã sản phẩm</label>
-          <input type="text" className="mt-1 p-2 w-full border rounded-md bg-slate-500 text-zinc-50" value={product && product.productId}  disabled/>
+          <input type="text" className="mt-1 p-2 w-full border rounded-md bg-slate-500 text-zinc-50"   disabled/>
         </div>
       
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Tên sản phẩm</label>
-          <input type="text"className="mt-1 p-2 w-full border rounded-md" value={product && product.productName} />
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"  />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Danh mục</label>
@@ -122,19 +81,19 @@ import LoadAllProductsController, { LoadAllProductsParam } from "../../controlle
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Số lượng</label>
-          <input type="number"  className="mt-1 p-2 w-full border rounded-md" value={ product && product.unit } />
+          <input type="number"  className="mt-1 p-2 w-full border rounded-md"  />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Giá</label>
-          <input type="number" className="mt-1 p-2 w-full border rounded-md" value={ product && product.price } />
+          <input type="number" className="mt-1 p-2 w-full border rounded-md" />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Hình ảnh</label>
-          <input type="text"className="mt-1 p-2 w-full border rounded-md" value={ product && product.image } />
+          <input type="text"className="mt-1 p-2 w-full border rounded-md"  />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Mô tả</label>
-          <input type="text"className="mt-1 p-2 w-full border rounded-md" value={ product && product.description } />
+          <input type="text"className="mt-1 p-2 w-full border rounded-md" />
         </div>
         <div className="flex justify-end">
           <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mr-48">Cập nhật</button>
