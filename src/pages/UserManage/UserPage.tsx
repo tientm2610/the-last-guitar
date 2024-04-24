@@ -18,7 +18,7 @@ function UserPage() {
   return (
     <div className="p-8  ml-60 mr-60"  >
       <div className="flex items-center justify-center mb-2">
-            <span className="text-gray-500 text-2xl font-bold">Quản lý sản phẩm</span>
+            <span className="text-gray-500 text-2xl font-bold">Quản lý người dùng</span>
           </div>
       <div className="mb-4 flex justify-between items-center">
         <div className="flex-1 mr-4">

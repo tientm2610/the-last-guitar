@@ -21,18 +21,11 @@ export default class OrderDetail{
        this.productId = productId;
    }
 
-   toJson(){
-    return {
-        "price": this.price,
-        "unit": this.unit,
-        "orderId": this.orderId,
-        "productId": this.productId
-    }
-   }
+ 
 
    //getAllOrderDetail
    public static async getAllOrderDetail(): Promise<OrderDetail[] | null> {
-       const res = await apiRequest("GET", "/orderdetails");
+       const res = await apiRequest("GET", "/detail/:orderId");
        return res;
    }
 }

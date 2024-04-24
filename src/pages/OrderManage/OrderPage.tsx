@@ -1,10 +1,47 @@
-
+import { useEffect, useState } from "react";
+import Order from "../../entities/Order";
 
 function OrderPage() {
+
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [orderInfor, setOrderInfor] = useState<any>({});
+
+    useEffect(() => {
+
+    fetchAllOrders();
+
+  },[]);
+
+  const fetchAllOrders = async () => {
+    const orders = await Order.getAllOrder();
+    if(orders){
+      setOrders(orders);
+    }
+  };
+
+  const handleUpdateStatus = async (order:Order) => {
+    try {
+      setOrderInfor(order);
+      const updatedOrderInfo = { ...orderInfor, orderId: order.orderId, status: orderInfor.status };
+        await Order.updateOrderStatus(updatedOrderInfo.orderId,orderInfor.status);
+      alert(`Cập nhật đơn hàng thành công`);
+      fetchAllOrders();
+    } catch (error:any) {
+        console.error(error);
+    }
+    alert(`Cấp nhật đơn hàng này`);
+  }
+
+
+  const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    // Cập nhật giá trị của option đã chọn vào orderInfo
+    setOrderInfor({ ...orderInfor, status: e.target.value });
+  };
+
   return (
     <div className="p-8 ml-60 mr-60">
       <div className="flex items-center justify-center mb-2">
-        <span className="text-green-500 text-2xl font-bold">Quản lý danh mục</span>
+        <span className="text-green-500 text-2xl font-bold">Quản lý đơn hàng</span>
       </div>
       <div className="mb-4 flex justify-center items-center"> {/* Chỉnh sửa lớp CSS ở đây */}
         <div className="flex-1 mr-4">
@@ -14,7 +51,6 @@ function OrderPage() {
             className="w-1/3 px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-00">Add Category</button>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-left">
@@ -31,23 +67,31 @@ function OrderPage() {
           </thead>
           <tbody>
             {/* Ví dụ về một hàng dữ liệu */}
-            <tr className="border-b">
-              <td className="p-4">2108110131</td>
-              <td className="p-4">371 Nguyễn Kiệm</td>
-              <td className="p-4">26-10-2023</td>
-              <td className="p-4">0123456789</td>
-              <select className="mt-1 p-2 w-full border rounded-md">
-                  <option>Đang xử lý</option>
-                  <option>Giao hàng thành công</option>
-                  <option>Giao hàng thất bại</option>
-                </select>
-              <td className="p-4">5000$</td>
-              <td className="p-4">
-                <button className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
-                <button className="ml-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
-              </td>
-            </tr>
-            {/* Bạn có thể thêm nhiều hàng dữ liệu tương tự */}
+            {orders.map((order) => (
+                <tr className="border-b" key={order.orderId} >
+                <td className="p-4">{order.orderId}</td>
+                <td className="p-4">{order.address}</td>
+                <td className="p-4">{order.orderDate}</td>
+                <td className="p-4">{order.phone}</td>
+                <td className="p-4">{order.status}</td>
+
+                <td className="p-4">{order.totalPrice}$</td>
+                <td className="p-4">
+                  <button onClick={()=>handleUpdateStatus(order)} 
+                  className="ml-2 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
+                <select 
+                 value={orderInfor.status}
+                 onChange={handleStatusChange}
+                  className="mt-1 p-2 w-full border rounded-md">
+                    <option>Đang xử lý</option>
+                    <option>Giao hàng thành công</option>
+                    <option>Giao hàng thất bại</option>
+                  </select>
+                </td>
+                
+              </tr>
+            ))}
+          
           </tbody>
         </table>
       </div>
@@ -56,4 +100,3 @@ function OrderPage() {
   }
   
   export default OrderPage;
-  
