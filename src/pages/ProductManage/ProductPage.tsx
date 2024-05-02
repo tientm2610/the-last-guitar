@@ -126,7 +126,7 @@ function ProductPage() {
         </div>
 
         {/* Biểu mẫu cập nhật thông tin sản phẩm */}
-        <div className="w-4/12">
+        <div className="w-4/12 " >
           <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">Thông tin sản phẩm</h2>
              {/* form cập nhật thông tin */}

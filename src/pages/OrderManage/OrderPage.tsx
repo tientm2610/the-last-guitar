@@ -29,7 +29,6 @@ function OrderPage() {
     } catch (error:any) {
         console.error(error);
     }
-    alert(`Cấp nhật đơn hàng này`);
   }
 
 
